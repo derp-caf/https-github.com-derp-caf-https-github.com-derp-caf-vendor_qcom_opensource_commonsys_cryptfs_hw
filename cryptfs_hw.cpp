@@ -60,6 +60,12 @@ int set_ice_param(int flag)
     rc = cryptfshwService->setIceParam(flag);
     return rc;
 }
+#else
+int set_ice_param(__unused int flag)
+{
+	return -1;
+}
+#endif
 
 int set_hw_device_encryption_key(const char* passwd, const char* enc_mode)
 {
